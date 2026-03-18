@@ -15,7 +15,7 @@ from backend.gif_engine   import get_reaction, detect_mood
 load_dotenv()
 
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
-MODEL  = "llama-3.1-8b-instant"
+MODEL  = "llama-3.3-70b-versatile"
 
 VIVEK_BASE_PROMPT = """You are VIVEK — विवेक — The Wise One.
 
