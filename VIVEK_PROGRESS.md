@@ -8,6 +8,7 @@
 - [x] Folder structure created
 - [x] Virtual environment set up
 - [x] Phase 1, Ex 1: Dictionaries + Groq response parsing ✅
+- [x] Phase 1, Ex 2: Memory system with dicts + JSON persistence ✅
 - [ ] Phase 2: ChromaDB + embeddings
 - [ ] Phase 3: Full VIVEK app (FastAPI + Streamlit + Groq)
 - [ ] Phase 4: n8n + deploy on Railway
