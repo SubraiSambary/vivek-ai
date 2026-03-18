@@ -6,6 +6,7 @@ import requests
 import uuid
 import os
 from dotenv import load_dotenv
+import threading
 
 load_dotenv()
 
@@ -13,6 +14,15 @@ try:
     API_URL = st.secrets.get("API_URL", None) or os.getenv("API_URL", "http://localhost:8000")
 except Exception:
     API_URL = os.getenv("API_URL", "http://localhost:8000")
+
+def ping_backend():
+    try:
+        requests.get(f"{API_URL}/health", timeout=90)
+    except:
+        pass
+
+# At the top of your app, before any UI
+threading.Thread(target=ping_backend, daemon=True).start()
 
 st.set_page_config(
     page_title="VIVEK — विवेक",
@@ -174,7 +184,7 @@ if prompt := st.chat_input("Talk to VIVEK... ask anything, upload docs, search t
                         "message":   prompt,
                         "user_name": st.session_state.user_name,
                     },
-                    timeout=60,
+                    timeout=120,
                     headers={"Content-Type": "application/json"},
                 )
                 data = resp.json()
