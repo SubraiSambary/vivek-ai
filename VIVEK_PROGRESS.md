@@ -10,8 +10,9 @@
 - [x] Phase 1, Ex 1: Dictionaries + Groq response parsing ✅
 - [x] Phase 1, Ex 2: Memory system with dicts + JSON persistence ✅
 - [x] Phase 1, Ex 3: Vector search from scratch + RAG pipeline ✅
-- [ ] Phase 2: Real embeddings + ChromaDB
-- [ ] Phase 3: Full VIVEK app (FastAPI + Streamlit + Groq)
+- [x] Phase 2, Ex 1: Real embeddings with sentence-transformers ✅
+- [x] Phase 2, Ex 2: ChromaDB persistent vector store + RAG retrieval ✅
+- [ ] Phase 3: Full VIVEK app — FastAPI + Streamlit + Groq + memory
 - [ ] Phase 4: n8n + deploy on Railway
 
 ## If context resets — paste this to Claude:

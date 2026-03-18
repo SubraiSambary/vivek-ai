@@ -1,0 +1,72 @@
+# backend/main.py
+# FastAPI app — REST endpoints for the Streamlit frontend
+
+from fastapi import FastAPI, UploadFile, File, Form
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+import shutil, os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+from backend.memory       import init_db
+from backend.vivek_brain  import chat
+from backend.vector_store import ingest_pdf, ingest_text, get_doc_count
+
+app = FastAPI(title="VIVEK API", version="1.0.0")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.on_event("startup")
+def startup():
+    init_db()
+    os.makedirs("data/uploads", exist_ok=True)
+    print("🧠 VIVEK is awake and ready!")
+
+class ChatRequest(BaseModel):
+    user_id:   str
+    message:   str
+    user_name: str = None
+
+@app.post("/chat")
+def chat_endpoint(req: ChatRequest):
+    result = chat(
+        user_id=req.user_id,
+        message=req.message,
+        user_name=req.user_name,
+    )
+    return result
+
+@app.post("/upload")
+async def upload_file(
+    file:    UploadFile = File(...),
+    user_id: str        = Form("default"),
+):
+    save_path = f"data/uploads/{user_id}_{file.filename}"
+    with open(save_path, "wb") as f:
+        shutil.copyfileobj(file.file, f)
+
+    if file.filename.lower().endswith(".pdf"):
+        chunks = ingest_pdf(save_path, user_id=user_id)
+    else:
+        content = open(save_path, "r", encoding="utf-8", errors="ignore").read()
+        chunks  = ingest_text(content, source=file.filename, user_id=user_id)
+
+    return {
+        "status":  "success",
+        "message": f"Ingested {chunks} chunks from {file.filename}",
+        "chunks":  chunks,
+    }
+
+@app.get("/doc-count/{user_id}")
+def doc_count(user_id: str):
+    return {"count": get_doc_count(user_id)}
+
+@app.get("/health")
+def health():
+    return {"status": "VIVEK is alive and caffeinated ☕"}
