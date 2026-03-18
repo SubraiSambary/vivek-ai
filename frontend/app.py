@@ -9,7 +9,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-API_URL = os.getenv("API_URL", "http://localhost:8000")
+API_URL = (
+    st.secrets.get("API_URL", None)
+    or os.getenv("API_URL", "http://localhost:8000")
+)
 
 st.set_page_config(
     page_title="VIVEK — विवेक",
@@ -162,7 +165,7 @@ if prompt := st.chat_input("Talk to VIVEK... ask anything, upload docs, search t
 
     # Call VIVEK
     with st.chat_message("assistant", avatar="🧠"):
-        with st.spinner("VIVEK is thinking... 🤔"):
+        with st.spinner("VIVEK is thinking... 🤔 (first message may take 30s if backend just woke up!)"):
             try:
                 resp = requests.post(
                     f"{API_URL}/chat",

@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: vivek-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: bash start.sh
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GIPHY_API_KEY
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.11.0

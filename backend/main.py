@@ -70,3 +70,7 @@ def doc_count(user_id: str):
 @app.get("/health")
 def health():
     return {"status": "VIVEK is alive and caffeinated ☕"}
+
+@app.get("/ping")
+def ping():
+    return {"pong": True}
