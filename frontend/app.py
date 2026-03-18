@@ -9,10 +9,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-API_URL = (
-    st.secrets.get("API_URL", None)
-    or os.getenv("API_URL", "http://localhost:8000")
-)
+try:
+    API_URL = st.secrets.get("API_URL", None) or os.getenv("API_URL", "http://localhost:8000")
+except Exception:
+    API_URL = os.getenv("API_URL", "http://localhost:8000")
 
 st.set_page_config(
     page_title="VIVEK — विवेक",
