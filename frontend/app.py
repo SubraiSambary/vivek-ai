@@ -174,7 +174,8 @@ if prompt := st.chat_input("Talk to VIVEK... ask anything, upload docs, search t
                         "message":   prompt,
                         "user_name": st.session_state.user_name,
                     },
-                    timeout=30,
+                    timeout=60,
+                    headers={"Content-Type": "application/json"},
                 )
                 data = resp.json()
                 reply    = data.get("reply", "Yaar, something went wrong! 😅")
