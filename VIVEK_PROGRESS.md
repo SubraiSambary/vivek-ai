@@ -7,7 +7,7 @@
 - [x] GitHub repo created
 - [x] Folder structure created
 - [x] Virtual environment set up
-- [ ] Phase 1: Python dictionaries + AI terminology
+- [x] Phase 1, Ex 1: Dictionaries + Groq response parsing ✅
 - [ ] Phase 2: ChromaDB + embeddings
 - [ ] Phase 3: Full VIVEK app (FastAPI + Streamlit + Groq)
 - [ ] Phase 4: n8n + deploy on Railway

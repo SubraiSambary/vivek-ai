@@ -1,0 +1,80 @@
+{
+  "yaar_001": {
+    "user_id": "yaar_001",
+    "name": "Rahul",
+    "first_seen": "2026-03-18T17:03:40.873594",
+    "last_seen": "2026-03-18T17:03:52.127048",
+    "total_messages": 12,
+    "topics_discussed": [
+      "Python dictionaries",
+      "embeddings",
+      "Python dictionaries"
+    ],
+    "personality_notes": {
+      "expertise": "intermediate Python",
+      "prefers_hindi": true
+    },
+    "chat_history": [
+      {
+        "role": "user",
+        "content": "Hey VIVEK! I just started learning Python.",
+        "timestamp": "2026-03-18T17:03:40.873850"
+      },
+      {
+        "role": "assistant",
+        "content": "Arrey Rahul bhai! Welcome! Dictionaries samajh aaye? 😄",
+        "timestamp": "2026-03-18T17:03:40.873855"
+      },
+      {
+        "role": "user",
+        "content": "Yes! Dict comprehensions are cool.",
+        "timestamp": "2026-03-18T17:03:40.873858"
+      },
+      {
+        "role": "assistant",
+        "content": "Bilkul sahi! You'll be using them EVERYWHERE. 🔥",
+        "timestamp": "2026-03-18T17:03:40.873859"
+      },
+      {
+        "role": "user",
+        "content": "VIVEK, explain embeddings to me!",
+        "timestamp": "2026-03-18T17:03:40.883294"
+      },
+      {
+        "role": "assistant",
+        "content": "Oho! Getting into the good stuff! 🧠 Embeddings are like...",
+        "timestamp": "2026-03-18T17:03:40.883301"
+      },
+      {
+        "role": "user",
+        "content": "Hey VIVEK! I just started learning Python.",
+        "timestamp": "2026-03-18T17:03:52.115890"
+      },
+      {
+        "role": "assistant",
+        "content": "Arrey Rahul bhai! Welcome! Dictionaries samajh aaye? 😄",
+        "timestamp": "2026-03-18T17:03:52.115896"
+      },
+      {
+        "role": "user",
+        "content": "Yes! Dict comprehensions are cool.",
+        "timestamp": "2026-03-18T17:03:52.115899"
+      },
+      {
+        "role": "assistant",
+        "content": "Bilkul sahi! You'll be using them EVERYWHERE. 🔥",
+        "timestamp": "2026-03-18T17:03:52.115901"
+      },
+      {
+        "role": "user",
+        "content": "VIVEK, explain embeddings to me!",
+        "timestamp": "2026-03-18T17:03:52.127462"
+      },
+      {
+        "role": "assistant",
+        "content": "Oho! Getting into the good stuff! 🧠 Embeddings are like...",
+        "timestamp": "2026-03-18T17:03:52.127468"
+      }
+    ]
+  }
+}
