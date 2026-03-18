@@ -1,8 +1,10 @@
 # VIVEK — don't commit these
 .env
+venv/
+vivek/
+__pycache__/
+*.pyc
 data/vector_store/
 data/memory/
 data/uploads/
-venv/
-__pycache__/
-*.pyc
+*.db

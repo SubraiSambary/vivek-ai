@@ -12,7 +12,8 @@
 - [x] Phase 1, Ex 3: Vector search from scratch + RAG pipeline ✅
 - [x] Phase 2, Ex 1: Real embeddings with sentence-transformers ✅
 - [x] Phase 2, Ex 2: ChromaDB persistent vector store + RAG retrieval ✅
-- [ ] Phase 3: Full VIVEK app — FastAPI + Streamlit + Groq + memory
+- [x] Phase 3: Full VIVEK app working locally ✅
+- [ ] Phase 4: n8n automation + Railway deployment
 - [ ] Phase 4: n8n + deploy on Railway
 
 ## If context resets — paste this to Claude:
